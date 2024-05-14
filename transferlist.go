@@ -33,7 +33,7 @@ func OpenPlayerList(pList []Player) {
 
 func MakeTransfer(p Player, pIndex int, list []Player) {
 	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Printf("Enter a club name to which you want to move %v\n", p.name)
+	fmt.Printf("Enter a club name to which you want move %v\n", p.name)
 	scanner.Scan()
 	transferTeam := scanner.Text()
 	fmt.Printf("Enter a price for which %v will move to %v\n", p.name, transferTeam)
@@ -78,16 +78,16 @@ func AddPlayer(pList *[]Player) {
 			scanner.Scan()
 			newPlayer.name = scanner.Text()
 		case 1:
-			fmt.Println("Enter this player TEAM: ")
+			fmt.Printf("Enter %s TEAM: \n", newPlayer.name)
 			scanner.Scan()
 			newPlayer.team = scanner.Text()
 		case 2:
-			fmt.Println("Enter this player POSITION: ")
+			fmt.Printf("Enter %s POSITION: \n", newPlayer.name)
 			scanner.Scan()
 			newPlayer.position = scanner.Text()
 
 		case 3:
-			fmt.Println("Enter this player PRICE: ")
+			fmt.Printf("Enter %s PRICE: \n", newPlayer.name)
 			scanner.Scan()
 			scanTransferValue, err := strconv.Atoi(scanner.Text())
 			if err != nil {
